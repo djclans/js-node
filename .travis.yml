@@ -1,0 +1,19 @@
+sudo: required
+dist: trusty
+
+language: node_js
+node_js:
+  - '4.5'
+  - '6.0'
+
+install:
+  - sudo apt-get update -q
+  - sudo apt-get install -q google-chrome-stable
+
+before_script:
+  - npm install -g yo gulp bower
+  - npm install -g generator-gulp-angular
+  - npm install 
+
+script:
+  - gulp test
